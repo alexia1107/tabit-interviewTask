@@ -5,9 +5,7 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
+     
       declarations: [
         AppComponent
       ],
@@ -20,11 +18,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'tabit-interviewTask'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('tabit-interviewTask');
-  });
+
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);

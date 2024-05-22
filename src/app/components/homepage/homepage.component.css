@@ -1,0 +1,25 @@
+.main-container {
+  font-family: Poppins, sans-serif;
+  color: #0c5349;
+  background-color: #f0faf5;
+  font-size: 30px;
+}
+
+.table-container {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  overflow-x: auto;
+  color: #0c5349;
+}
+
+.custom-table {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 30px;
+  background-color: azure;
+}
+
+th {
+  font-weight: bold;
+}
