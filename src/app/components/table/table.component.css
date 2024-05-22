@@ -1,0 +1,43 @@
+.table-container {
+  width: 100%;
+}
+
+.controls-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.controls-container button {
+  margin: 0 10px;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px;
+}
+
+.grid-item {
+  flex: 1 1 calc(33.333% - 30px);
+  border: 1px solid #888;
+  border-radius: 4px;
+  padding: 10px;
+  background: #e0e0e0;
+}
+
+.mobile-container {
+  display: block;
+  padding: 10px;
+}
+
+.mobile-item {
+  border-bottom: 1px solid #888;
+  padding: 10px 0;
+  background: #e0e0e0;
+}
+
+.mobile-item:last-child {
+  border-bottom: none;
+}

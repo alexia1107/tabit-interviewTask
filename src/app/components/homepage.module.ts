@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,30 +12,26 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
-
 import { MatCardModule } from '@angular/material/card';
-
 import { MatDialogModule } from '@angular/material/dialog';
-
-import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatSortModule } from '@angular/material/sort';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RouterModule } from '@angular/router';
 import { UserDetailsModalComponent } from './user-details-modal/user-details-modal.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
-  declarations: [HomepageComponent, UserDetailsModalComponent],
+  declarations: [HomepageComponent, UserDetailsModalComponent, TableComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -59,6 +54,7 @@ import { UserDetailsModalComponent } from './user-details-modal/user-details-mod
     MatProgressSpinnerModule,
     MatExpansionModule,
     MatDividerModule,
+    ReactiveFormsModule,
     MatListModule,
     MatTooltipModule,
     MatCardModule,
@@ -106,7 +102,9 @@ import { UserDetailsModalComponent } from './user-details-modal/user-details-mod
     MatFormFieldModule,
     HomepageComponent,
     UserDetailsModalComponent,
+    TableComponent,
     MatSortModule,
+    ReactiveFormsModule,
   ],
   providers: [HomepageComponent],
 })

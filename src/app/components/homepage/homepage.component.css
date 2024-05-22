@@ -1,25 +1,37 @@
 .main-container {
+  margin: 0;
+  padding: 0;
   font-family: Poppins, sans-serif;
-  color: #0c5349;
+  color: white;
   background-color: #f0faf5;
   font-size: 30px;
 }
 
-.table-container {
+.header-container {
+  background-color: #131053;
+  height: 150px;
   display: flex;
-  margin-top: 50px;
+  align-items: center;
   justify-content: center;
-  overflow-x: auto;
-  color: #0c5349;
+  color: white;
 }
 
-.custom-table {
-  width: 100%;
-  margin: 0 auto;
-  font-size: 30px;
-  background-color: azure;
+.header-container h2 {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+.large-icon {
+  font-size: 40px;
+  margin-right: 10px;
+  line-height: 1;
 }
 
-th {
-  font-weight: bold;
+.margin-left-15 {
+  margin-left: 15px;
+}
+
+
+.icon {
+  margin-right: 8px; 
 }
