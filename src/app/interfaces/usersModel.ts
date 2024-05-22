@@ -1,18 +1,18 @@
 export interface UsersDetails {
   address: Address;
-  company: Company;
+  company?: Company;
   email: string;
-  id: number;
+  id?: number;
   name: string;
-  phone: string;
-  username: string;
-  website: string;
+  phone?: string;
+  username?: string;
+  website?: string;
 }
 interface Address {
   city: string;
-  geo: {
-    lat: string;
-    lng: string;
+  geo?: {
+    lat?: string;
+    lng?: string;
   };
   street: string;
   suite: string;
@@ -20,7 +20,7 @@ interface Address {
 }
 
 interface Company {
-  bs: string;
-  catchPhrase: string;
-  name: string;
+  bs?: string;
+  catchPhrase?: string;
+  name?: string;
 }

@@ -9,7 +9,7 @@ import { UsersDetails } from '../../interfaces/usersModel';
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit {
-  users: UsersDetails[] = [];
+  public users: UsersDetails[] = [];
   public loadingSpinner: boolean = true;
 
   constructor(private userService: UserService) {}

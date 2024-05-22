@@ -11,41 +11,23 @@ import { catchError } from 'rxjs';
   styleUrls: ['./user-details-modal.component.css'],
 })
 export class UserDetailsModalComponent implements OnInit {
-  userData: UsersDetails = {} as UsersDetails;
-  userForm: FormGroup;
+  public userForm!: FormGroup;
 
   constructor(
     private userService: UserService,
     private dialogRef: MatDialogRef<UserDetailsModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: UsersDetails,
     private fb: FormBuilder
-  ) {
-    this.userForm = this.fb.group({
-      name: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/^\s*[A-Za-z]+(?:\s+[A-Za-z]+)*\s*$/),
-        ],
-      ],
-      email: { value: '', disabled: true },
-      city: [''],
-      zipcode: [''],
-      street: [''],
-      suite: [''],
-    });
-  }
+  ) {}
 
   ngOnInit(): void {
-    this.userData = { ...this.data };
-
-    this.userForm.patchValue({
-      name: this.userData.name,
-      email: this.userData.email,
-      city: this.userData.address.city,
-      zipcode: this.userData.address.zipcode,
-      street: this.userData.address.street,
-      suite: this.userData.address.suite,
+    this.userForm = this.fb.group({
+      name: [this.data.name, [Validators.required, Validators.pattern(/^\s*[A-Za-z]+(?:\s+[A-Za-z]+)*\s*$/)]],
+      email: { value: this.data.email, disabled: true },
+      city: [this.data.address.city],
+      zipcode: [this.data.address.zipcode],
+      street: [this.data.address.street],
+      suite: [this.data.address.suite],
     });
   }
 
@@ -57,14 +39,14 @@ export class UserDetailsModalComponent implements OnInit {
     if (this.userForm.valid) {
       const userDataToUpdate = {
         ...this.data,
-        name: this.userForm.get('name')?.value,
-        email: this.userForm.get('email')?.value,
+        name: this.userForm.controls['name'].value,
+        email: this.userForm.controls['email'].value,
         address: {
           ...this.data.address,
-          city: this.userForm.get('city')?.value,
-          zipcode: this.userForm.get('zipcode')?.value,
-          street: this.userForm.get('street')?.value,
-          suite: this.userForm.get('suite')?.value,
+          city: this.userForm.controls['city'].value,
+          zipcode: this.userForm.controls['zipcode'].value,
+          street: this.userForm.controls['street'].value,
+          suite: this.userForm.controls['suite'].value,
         },
       };
 
@@ -73,6 +55,7 @@ export class UserDetailsModalComponent implements OnInit {
         .pipe(
           catchError((error) => {
             console.error('Error updating user data:', error);
+           
             throw error;
           })
         )
